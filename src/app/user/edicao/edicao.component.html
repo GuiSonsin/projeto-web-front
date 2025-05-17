@@ -1,0 +1,27 @@
+<form (ngSubmit)="salvar()">
+    <div>
+        <label>CPF:</label>
+        <input name="document" type="text" [(ngModel)] = "user.document">
+    </div>
+    <div>
+        <label>Nome:</label>
+        <input name="name" type="text" [(ngModel)] = "user.name">
+    </div>
+    <div>
+        <label>Sobrenome:</label>
+        <input name="lastName" type="text" [(ngModel)] = "user.lastName">
+    </div>
+    <div>
+        <label>Senha:</label>
+        <input name="password" type="password" [(ngModel)] = "user.password">
+    </div>
+    <div>
+        <label>Telefone:</label>
+        <input name="phone" type="tel" [(ngModel)] = "user.phone">
+    </div>
+    <div>
+        <label>Email:</label>
+        <input name="email" type="email" [(ngModel)] = "user.email">
+    </div> 
+    <button type="submit">Enviar</button>
+<form>
