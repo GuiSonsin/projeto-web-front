@@ -9,35 +9,36 @@ import { User } from '../user.model';
   selector: 'app-edicao',
   imports: [CommonModule, FormsModule],
   templateUrl: './edicao.component.html',
-  styleUrl: './edicao.component.css'
+  styleUrl: './edicao.component.css',
 })
-
 export class EdicaoComponent implements OnInit {
-
   user: User = {
     document: '',
     name: '',
     lastName: '',
     password: '',
-    phone: '', 
+    phone: '',
     email: '',
-    isActive: true
+    isActive: true,
   };
 
   private document!: string;
 
-  constructor( private route: ActivatedRoute, private router: Router, private userService: UserService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private userService: UserService
+  ) {}
 
   ngOnInit(): void {
-      this.document = String(this.route.snapshot.paramMap.get('id'));
-      this.carregarUser();
+    this.document = String(this.route.snapshot.paramMap.get('id'));
+    this.carregarUser();
   }
 
   carregarUser(): void {
-    
-    if(!this.document){
+    if (!this.document) {
       this.router.navigate(['/listagem']);
-      return
+      return;
     }
 
     this.userService.buscarUser(this.document).subscribe((a) => {
@@ -46,13 +47,13 @@ export class EdicaoComponent implements OnInit {
   }
 
   salvar(): void {
-    if(!this.user){
-      return
+    if (!this.user) {
+      return;
     }
 
     this.userService.atualizarUser(this.document, this.user).subscribe(() => {
-      this.router.navigate(['/listagem'])
-    })
+      this.router.navigate(['/listagem']);
+    });
   }
 
   cancelar(): void {

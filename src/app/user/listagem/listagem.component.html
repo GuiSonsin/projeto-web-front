@@ -1,14 +1,13 @@
 <body class="bg-light mb-3">
-
   <header class="py-3 mb-4">
-
     <div class="container">
       <div class="d-flex justify-content-between align-items-center">
         <h1 class="h4 mb-0">Listagem de Usuários</h1>
-        <button type="button" routerLink="/cadastro" class="btn btn-primary">Novo Cadastro</button>
+        <button type="button" routerLink="/cadastro" class="btn btn-primary">
+          Novo Cadastro
+        </button>
       </div>
     </div>
-
   </header>
 
   <main class="container-fluid px-4">
@@ -18,7 +17,6 @@
           <div class="card-body p-0">
             <div class="table-responsive rounded-2">
               <table class="table table-striped table-light table-bordered m-0">
-
                 <thead class="table-primary">
                   <tr>
                     <th scope="col">CPF</th>
@@ -32,7 +30,6 @@
                 </thead>
 
                 <tbody>
-
                   <tr *ngFor="let user of users">
                     <th scope="row">{{ user.document }}</th>
                     <td>{{ user.name }}</td>
@@ -41,7 +38,11 @@
                     <td>{{ user.phone }}</td>
                     <td>{{ user.email }}</td>
                     <td>
-                      <button type="button" class="btn btn-outline-primary w-100" [routerLink]="['/edicao', user.document]">
+                      <button
+                        type="button"
+                        class="btn btn-outline-primary w-100"
+                        [routerLink]="['/edicao', user.document]"
+                      >
                         Editar
                       </button>
                     </td>

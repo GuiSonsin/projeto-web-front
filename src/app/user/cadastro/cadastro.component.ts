@@ -9,25 +9,24 @@ import { Router } from '@angular/router';
   selector: 'app-cadastro',
   imports: [CommonModule, FormsModule],
   templateUrl: './cadastro.component.html',
-  styleUrl: './cadastro.component.css'
+  styleUrl: './cadastro.component.css',
 })
 export class CadastroComponent {
-
-  user: User= {
+  user: User = {
     document: '',
     name: '',
     lastName: '',
     password: '',
-    phone: '', 
+    phone: '',
     email: '',
-    isActive: true
+    isActive: true,
   };
 
   constructor(private userService: UserService, private router: Router) {}
 
-  salvar(){
+  salvar() {
     this.userService.cadastrarUser(this.user).subscribe(() => {
-      this.router.navigate(['/listagem'])
+      this.router.navigate(['/listagem']);
     });
   }
 
