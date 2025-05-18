@@ -15,9 +15,7 @@ export class ListagemComponent implements OnInit {
   
   users: User[] = []
 
-  constructor(private userService: UserService){
-
-  }
+  constructor(private userService: UserService) {}
   ngOnInit(): void {
     this.carregarUser()
   }

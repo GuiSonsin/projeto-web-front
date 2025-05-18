@@ -23,9 +23,7 @@ export class CadastroComponent {
     isActive: true
   };
 
-  constructor(private userService: UserService, private router: Router){
-    
-  }
+  constructor(private userService: UserService, private router: Router) {}
 
   salvar(){
     this.userService.cadastrarUser(this.user).subscribe(() => {
@@ -36,5 +34,4 @@ export class CadastroComponent {
   cancelar(): void {
     this.router.navigate(['/listagem']);
   }
-
 }

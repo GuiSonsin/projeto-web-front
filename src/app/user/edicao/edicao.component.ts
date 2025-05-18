@@ -26,10 +26,7 @@ export class EdicaoComponent implements OnInit {
 
   private document!: string;
 
-  constructor( private route: ActivatedRoute, private router: Router, private userService: UserService) {
-    
-
-  }
+  constructor( private route: ActivatedRoute, private router: Router, private userService: UserService) {}
 
   ngOnInit(): void {
       this.document = String(this.route.snapshot.paramMap.get('id'));
@@ -37,7 +34,7 @@ export class EdicaoComponent implements OnInit {
   }
 
   carregarUser(): void {
-
+    
     if(!this.document){
       this.router.navigate(['/listagem']);
       return
@@ -61,5 +58,4 @@ export class EdicaoComponent implements OnInit {
   cancelar(): void {
     this.router.navigate(['/listagem']);
   }
-
 }
