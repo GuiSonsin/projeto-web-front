@@ -58,4 +58,8 @@ export class EdicaoComponent implements OnInit {
     })
   }
 
+  cancelar(): void {
+    this.router.navigate(['/listagem']);
+  }
+
 }

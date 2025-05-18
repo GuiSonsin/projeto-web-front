@@ -32,4 +32,9 @@ export class CadastroComponent {
       this.router.navigate(['/listagem'])
     });
   }
+
+  cancelar(): void {
+    this.router.navigate(['/listagem']);
+  }
+
 }
